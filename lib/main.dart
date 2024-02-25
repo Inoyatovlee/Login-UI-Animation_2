@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_ui_animation_2/page/Home.dart';
+import 'package:login_ui_animation_2/screens/onboding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      title: 'The Flutter Way',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xFFEEF1F8),
+        primarySwatch: Colors.blue,
+        fontFamily: "Intel",
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          errorStyle: TextStyle(height: 0),
+          border: defaultInputBorder,
+          enabledBorder: defaultInputBorder,
+          focusedBorder: defaultInputBorder,
+          errorBorder: defaultInputBorder,
         ),
-        home: HomePage());
+      ),
+      home: const OnboardingScreen(),
+    );
   }
 }
+
+const defaultInputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.all(Radius.circular(16)),
+  borderSide: BorderSide(
+    color: Color(0xFFDEE3F2),
+    width: 1,
+  ),
+);
